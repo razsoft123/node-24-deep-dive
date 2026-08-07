@@ -1,0 +1,25 @@
+{
+  "name": "24-deep-dive",
+  "version": "1.0.0",
+  "description": "The learning project of nodeJS",
+  "keywords": [
+    "Learning",
+    "deep",
+    "dive"
+  ],
+  "homepage": "https://github.com/razsoft123/node-24-deep-dive#readme",
+  "bugs": {
+    "url": "https://github.com/razsoft123/node-24-deep-dive/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razsoft123/node-24-deep-dive.git"
+  },
+  "license": "MIT",
+  "author": "Raz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
