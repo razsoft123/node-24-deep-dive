@@ -1,19 +1,23 @@
 // This is the program to demonstrate the nodeJS fundamental of event loop. 
 console.log("First output");
 setTimeout(() => {
-    console.log("Last output")
+    console.log("Fifth/sixth: timers")
 }, 0)
 
+process.nextTick(() => {
+    console.log("Third: beform the promise")
+})
+
 setImmediate(() => {
-    console.log("Before timeout")
+    console.log("fifth/sixth: check queue")
 })
 
 Promise.resolve().then(() => {
-    console.log("After immediate")
+    console.log("Forth: Microtask queue promises")
 })
 
 queueMicrotask(() => {
-    console.log("Before promise")
+    console.log("Third: micro task queue")
 })
 
 console.log("Second output")
