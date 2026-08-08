@@ -1,0 +1,64 @@
+In the callback queue there are different phases. When the Event loop enters in the callback then it perform its operation in different phases until the queue becomes empty of maximum numbers of callbacks executed. 
+
+Phases of Event Loop callback
+Pending callbacks
+Idle, prepare
+Poll or IO callbacks
+Check
+Close callback
+Timers
+
+All synchronous code takes priority on the asynchronous code in the nodeJS javaScript runtime. 
+
+The execution of the microtask queue is executed between each callback of the timer queue. 
+
+Callbacks in the microtask queue are executed before the callbacks in the IO queue. 
+
+To add a callback to the check queue we use setImmidiate() function. Which will execute after the IO queue is executed.
+
+
+IO events are polled and only after the IO operation is completed the callback function of the IO operations are added to the IO queue. 
+Poll phase: It’s a phase where the event loop polls the IO callbacks from, http req or TCP connection or files, It check if it has completed then it adds them into the IO callback. Or the poll callback.
+
+Check: The phase executes immediately after the poll phase. Then it executes the callback set by the setImmidiate() function. 
+
+Close: When a close event is generated. Then it’s processed by the close callback. Events like File stream closed or the Socket.destroy()
+
+Timers: The timers callback executes after the set time using the setTImeout or the setInterval function is ended. It’s a contract that the callback will execute after that time but, not guarantee the exact time. 
+
+setImmidiate() will always execute before the setTimeout(). If it’s scheduled within the IO cycle. Independently of how many timers are present. 
+
+The nextTickQueue is always executed after the current operation is executed regardless of the phase of the eventLoop(). 
+
+
+In the callback queue there are different phases. When the Event loop enters in the callback then it perform its operation in different phases until the queue becomes empty of maximum numbers of callbacks executed. 
+
+Phases of Event Loop callback
+Pending callbacks
+Idle, prepare
+Poll or IO callbacks
+Check
+Close callback
+Timers
+
+All synchronous code takes priority on the asynchronous code in the nodeJS javaScript runtime. 
+
+The execution of the microtask queue is executed between each callback of the timer queue. 
+
+Callbacks in the microtask queue are executed before the callbacks in the IO queue. 
+
+To add a callback to the check queue we use setImmidiate() function. Which will execute after the IO queue is executed.
+
+
+IO events are polled and only after the IO operation is completed the callback function of the IO operations are added to the IO queue. 
+Poll phase: It’s a phase where the event loop polls the IO callbacks from, http req or TCP connection or files, It check if it has completed then it adds them into the IO callback. Or the poll callback.
+
+Check: The phase executes immediately after the poll phase. Then it executes the callback set by the setImmidiate() function. 
+
+Close: When a close event is generated. Then it’s processed by the close callback. Events like File stream closed or the Socket.destroy()
+
+Timers: The timers callback executes after the set time using the setTImeout or the setInterval function is ended. It’s a contract that the callback will execute after that time but, not guarantee the exact time. 
+
+setImmidiate() will always execute before the setTimeout(). If it’s scheduled within the IO cycle. Independently of how many timers are present. 
+
+The nextTickQueue is always executed after the current operation is executed regardless of the phase of the eventLoop(). 
